@@ -1,10 +1,12 @@
+import { Navbar } from "react-bootstrap";
+import { Container } from "react-bootstrap/lib/Tab";
 import "./Header.css"
 
 function Header (){
         return (
             <div>
-            <nav className="navbar">
-                <div className="container-fluid">
+            <Navbar>
+                <Container>
                     <div className="navbar-header">
                         <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false">
                             <span className="icon-bar"></span>
@@ -42,8 +44,8 @@ function Header (){
                             <button type="submit" className="btn"><span className="fa fa-search"></span></button>
                         </form>
                     </div>
-                </div>
-            </nav>
+                </Container>
+            </Navbar>
         </div>
     )
 }
