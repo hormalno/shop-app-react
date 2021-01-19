@@ -9,18 +9,21 @@ body {
 	border-radius: 0;
 	background: linear-gradient(to right, #ff5858, #f857a6)
 };
-.navbar	.navbar-nav li > a, .navbar .navbar-brand {
+.navbar	span {
+	color: white;
+}
+/* .navbar	.navbar-nav a, .navbar .navbar-brand {
 	max-height: 50px;
 	width: auto;
 	background: transparent;
 	font-size: 18px;
 	transition: 0.2s ease-in-out;
 };
-.navbar .navbar-nav li > a:hover, .navbar .navbar-brand:hover{
+.navbar .navbar-nav a:hover, .navbar .navbar-brand:hover{
 	background-color: rgba(255,255,255,0.2);
 	font-size: 14px;
 }
-.navbar .navbar-nav li > a:hover .link, .navbar .navbar-brand:hover .link {
+.navbar .navbar-nav a:hover .link, .navbar .navbar-brand:hover .link {
 	width: 100%;
 	padding: 0 5px 0 5px;
 	visibility: visible;
@@ -34,9 +37,7 @@ body {
 	visibility: hidden;
 	font-size: 0px;
 }
-.navbar	span {
-	color: white;
-}
+
 .navbar	.navbar-toggle {
 	padding-right: 0;
 }
@@ -52,10 +53,10 @@ body {
 .navbar	button[type=submit] {
 	padding-right: 0;
 };
-.navbar button[type=submit]	span {
+.navbar button[type=submit]	.searchIcon {
 	transition: 0.3s ease-in-out;
 }
-.navbar button[type=submit]:hover span {
+.navbar button[type=submit]:hover .searchIcon {
 	transform: scale(1.3) rotate(90deg);
 }
 .navbar	form {
@@ -68,11 +69,12 @@ body {
 	font-weight: bold;
 	background: rgba(255,255,255,0.7);
 	transition: 0.2s ease-in-out;
-}
-.navbar	form .form-control:hover {
+	visibility: hidden;
+} */
+/* .navbar	form .form-control:hover {
 	background: white;
-}
-.navbar .dropdown .fa-caret-down {
+} */
+/* .navbar .dropdown .fa-caret-down {
 	padding-left: 3px;
 	font-size: 18px;
 	transition: 0.4s ease;
@@ -112,7 +114,7 @@ body {
 }
 .navbar .dropdown .dropdown-menu a {
 	padding: 0 15px 0 15px;
-}
+} */
 
 /* .navbar {
 	.link {

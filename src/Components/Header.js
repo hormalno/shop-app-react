@@ -1,44 +1,70 @@
-import { Form, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
-import "./Header.css"
+import { faHome, faInfoCircle, faPhone, faSearch, faShoppingCart, faUserCircle, faCode } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Form, Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+import './Header.css';
 
-function Header (){
+const Header = (props) => {
+
+    const StyledSpan = styled.span `
+        width: 0;
+        font-family: 'Roboto', sans-serif;
+        transition: 0.2s ease-in-out;
+        visibility: hidden;
+        font-size: 0px;
+        color: white;
+    `
+
+    const StyledLink = styled(NavLink)`
+        max-height: 50px;
+        width: auto;
+        background: transparent;
+        font-size: 18px;
+        transition: 0.2s ease-in-out;
+        &:hover {
+            background-color: rgba(255,255,255,0.2);
+	        font-size: 14px;
+        };
+    `
+    
+
+    // const [isOpen, setIsOpen] = useState(false);
+
+    // const toggle = () => setIsOpen(!isOpen);
+    
     return (
-        <div>
-            <Navbar>
-                <Navbar.Brand href="/"><span className="fa fa-home"></span><span className="link"> Home</span></Navbar.Brand>
-                {/* <div className="navbar-collapse collapse" id="collapse-1"> */}
-                <Nav>
-                    <NavDropdown as="li">
-                        <NavDropdown.Toggle href="/" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <span className="fa fa-tags"></span><span className="link"> Products</span> <span className="fa fa-caret-down"></span></NavDropdown.Toggle>
-                        <NavDropdown.Menu className="dropdown-menu">
-                            <NavDropdown.Item><NavLink to="/"><span className="fa fa-tag"></span> Catalogue 1</NavLink></NavDropdown.Item>
-                            <NavDropdown.Item><NavLink to="/"><span className="fa fa-tag"></span> Catalogue 2</NavLink></NavDropdown.Item>
-                        </NavDropdown.Menu>
-                    </NavDropdown>
-                    <li className="dropdown">
-                        <a href="/" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <span className="fa fa-gears"></span><span className="link"> Services</span> <span className="fa fa-caret-down"></span></a>
-                        <ul className="dropdown-menu">
-                            <li><NavLink to="/"><span className="fa fa-gear"></span> Service 1</NavLink></li>
-                            <li><NavLink to="/"><span className="fa fa-gear"></span> Service 2</NavLink></li>
-                            <li><NavLink to="/"><span className="fa fa-gear"></span> Service 3</NavLink></li>
-                        </ul>
-                    </li>
-                    <Nav.Item as="li"><NavLink to="/"><span className="fa fa-info-circle"></span><span className="link"> About</span></NavLink></Nav.Item>
-                    <Nav.Item as="li"><NavLink to="/"><span className="fa fa-phone"></span><span className="link"> Contact</span></NavLink></Nav.Item>
-                </Nav>
-                <Form inline>
-                    <Form.Group>
-                        <input type="text" className="form-control" placeholder="Search" />
-                    </Form.Group>
-                    <button type="submit" className="btn"><span className="fa fa-search"></span></button>
-                </Form>
-                {/* </div> */}
-            </Navbar>
-        </div>
-    )
+    <div>
+        <Navbar>
+            <Navbar.Brand href="/"><FontAwesomeIcon icon={faCode} color="white" /> <span>My Shop</span></Navbar.Brand>
+            {/* <div className="navbar-collapse collapse" id="collapse-1"> */}
+            <Nav>
+                <Nav.Item as="li"><NavLink to="/"><FontAwesomeIcon icon={faHome} color="white" /><StyledSpan> Home</StyledSpan></NavLink></Nav.Item>
+                <NavDropdown as="li" menuRole="menu" title="Products">
+                    {/* <NavDropdown.Toggle href="/" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> */}
+                    <span className="fa fa-tags"></span><span className="link"> Products</span> <span className="fa fa-caret-down"></span>
+                    {/* <NavDropdown.Menu className="dropdown-menu"> */}
+                        <NavDropdown.Item><NavLink to="/"><span className="fa fa-tag"></span> Catalogue 1</NavLink></NavDropdown.Item>
+                        <NavDropdown.Item><NavLink to="/"><span className="fa fa-tag"></span> Catalogue 2</NavLink></NavDropdown.Item>
+                    {/* </NavDropdown.Menu> */}
+                </NavDropdown>
+                <StyledLink to="/"><FontAwesomeIcon icon={faInfoCircle} color="white" /><StyledSpan> About</StyledSpan></StyledLink>
+                <StyledLink to="/"><FontAwesomeIcon icon={faPhone} color="white" /><StyledSpan> Contact</StyledSpan></StyledLink>
+            </Nav>
+            <Form inline>
+                <Form.Group>
+                    <input type="text" className="form-control" placeholder="Search" />
+                </Form.Group>
+                <Button type="submit"><FontAwesomeIcon className="searchIcon" icon={faSearch} color="white" /></Button>
+            </Form>
+            <Nav pullRight>
+                <StyledLink to="/"><FontAwesomeIcon icon={faUserCircle} color="white" /><span className="link"> Log in</span></StyledLink>
+                <StyledLink to="/"><FontAwesomeIcon icon={faShoppingCart} color="white"/><span className="link"> Cart</span></StyledLink>
+            </Nav>
+            {/* </div> */}
+        </Navbar>
+    </div>
+    );
 }
 
 export default Header;
