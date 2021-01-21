@@ -5,16 +5,21 @@ import Home from './Components/Home';
 
 function App() {
   return (
-    <div className="App">
+    <div>
+    <div class="header-wrapper">
+      <div class="site-branding">
+       <div class="site-branding-text">
+          <p class="site-title">Hormalno</p>
+        </div>
+      </div>
+    </div>
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
         <Route path="/about-us">
-            {/* <AboutUs /> */}
         </Route>
         <Route path="/contact-us">
-            {/* <ContactUs /> */}
         </Route>
       </Switch>
     </div>

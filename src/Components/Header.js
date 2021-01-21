@@ -29,13 +29,13 @@ const Header = () => {
                 <NavLink to="/"><StyledSpan className="link"> About</StyledSpan></NavLink>
                 <NavLink to="/"><StyledSpan className="link"> Contact</StyledSpan></NavLink>
             </Nav>
-            <Form inline>
-                <Form.Group>
-                    <input type="text" className="form-control" placeholder="Search" />
-                </Form.Group>
-                <Button type="submit"><FontAwesomeIcon className="searchIcon" icon={faSearch} color="white" /></Button>
-            </Form>
-            <Nav pullRight>
+            <Nav right>
+                <Form inline>
+                    <Form.Group>
+                        <input type="text" className="form-control" placeholder="Search" />
+                    </Form.Group>
+                    <Button type="submit"><FontAwesomeIcon className="searchIcon" icon={faSearch} color="white" /></Button>
+                </Form>
                 <StyledLinkIcons to="/"><FontAwesomeIcon icon={faUserCircle} color="white" /><StyledSpan className="link"> Log in</StyledSpan></StyledLinkIcons>
                 <StyledLinkIcons to="/"><FontAwesomeIcon icon={faShoppingCart} color="white"/><StyledSpan className="link"> Cart</StyledSpan></StyledLinkIcons>
             </Nav>
