@@ -1,48 +1,243 @@
-import { faHome, faInfoCircle, faPhone, faSearch, faShoppingCart, faUserCircle, faCode } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Form, Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
-import './Header.css';
-import { StyledSpan, StyledLinkIcons} from "./styled_components/style_components.js";
+import React, { Component } from 'react';
 
-const Header = () => {
 
-    // const [isOpen, setIsOpen] = useState(false);
-
-    // const toggle = () => setIsOpen(!isOpen);
-
-    return (
-    <div>
-        <Navbar>
-            <Navbar.Brand href="/"><FontAwesomeIcon icon={faCode} color="white" /> <span>My Shop</span></Navbar.Brand>
-            {/* <div className="navbar-collapse collapse" id="collapse-1"> */}
-            <Nav>
-                <NavLink to="/"><StyledSpan className="link"> Home</StyledSpan></NavLink>
-                <NavDropdown as="li" menuRole="menu" title="Products">
-                    {/* <NavDropdown.Toggle href="/" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> */}
-                    <span className="fa fa-tags"></span><span className="link"> Products</span> <span className="fa fa-caret-down"></span>
-                    {/* <NavDropdown.Menu className="dropdown-menu"> */}
-                        <NavDropdown.Item><NavLink to="/"><span className="fa fa-tag"></span> Catalogue 1</NavLink></NavDropdown.Item>
-                        <NavDropdown.Item><NavLink to="/"><span className="fa fa-tag"></span> Catalogue 2</NavLink></NavDropdown.Item>
-                    {/* </NavDropdown.Menu> */}
-                </NavDropdown>
-                <NavLink to="/"><StyledSpan className="link"> About</StyledSpan></NavLink>
-                <NavLink to="/"><StyledSpan className="link"> Contact</StyledSpan></NavLink>
-            </Nav>
-            <Nav right>
-                <Form inline>
-                    <Form.Group>
-                        <input type="text" className="form-control" placeholder="Search" />
-                    </Form.Group>
-                    <Button type="submit"><FontAwesomeIcon className="searchIcon" icon={faSearch} color="white" /></Button>
-                </Form>
-                <StyledLinkIcons to="/"><FontAwesomeIcon icon={faUserCircle} color="white" /><StyledSpan className="link"> Log in</StyledSpan></StyledLinkIcons>
-                <StyledLinkIcons to="/"><FontAwesomeIcon icon={faShoppingCart} color="white"/><StyledSpan className="link"> Cart</StyledSpan></StyledLinkIcons>
-            </Nav>
-            {/* </div> */}
-        </Navbar>
-    </div>
-    );
+class Header extends Component {
+    render() {
+        return (
+        <div id="header" data-section-id="header" data-section-type="header-section">
+          <div className="header_top">
+            <div className="container">
+              <div className="top_menu hidden-ms hidden-xs">
+                <a className="navbar-brand" href="/" itemprop="url">
+                  <img src="//cdn.shopify.com/s/files/1/0787/9973/files/logo_550x.png?v=1487270357" alt="FurnishTime" className="img-responsive" itemprop="logo"/>
+                </a>
+              </div>
+              <div className="hed_right">
+                <ul>       
+                  <li><a href="/account">My Account</a></li>  
+                  <li><a href="/pages/faqs">Help</a></li>
+                  <li><a href="/pages/contact">Contact</a></li>
+                </ul>    
+                <div className="header-contact">
+                  <ul>
+                    <li><a href="tel:800.555.5555"><span className="fa fa-phone"></span>800.555.5555</a></li>
+                    <li><a href="mailto:email@example.com"><span className="fa fa-envelope"></span>email@example.com</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="header_bot ">
+            <div className="header_content">
+              <div className="container">
+                <div id="nav">
+                  <nav className="navbar" role="navigation">
+                    <div className="navbar-header">
+                      <a href="#" className="visible-ms visible-xs pull-right navbar-cart" id="wsnavtoggle">
+                        <div className="cart-icon"><i className="fa fa-bars"></i></div>
+                      </a>
+                      <li className="dropdown-grid no-open-arrow visible-ms visible-xs account-icon-mobile navbar-cart">
+                        <a data-toggle="dropdown" href="javascript:;" className="dropdown-toggle navbar-cart" aria-expanded="true"><span className="icons"><i className="fa fa-user"></i></span></a>
+                        <div className="dropdown-grid-wrapper mobile-grid-wrapper">
+                          <div className="dropdown-menu no-padding col-xs-12 col-sm-5" role="menu">
+                            <div className="menu_c acc_menu">
+                              <div className="menu_title clearfix">
+                                <h4>My Account</h4> 
+                              </div>
+                              <div className="login_frm">
+                                <p className="text-center">Welcome to FurnishTime!</p>
+                              <div className="remember">
+                                    <a href="/account/login" className="signin_btn btn_c">Login</a>
+                                    <a href="/account/register" className="signin_btn btn_c">Create Account</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                      </li>
+                      <a href="javascript:void(0);" data-href="/cart" className="visible-ms visible-xs pull-right navbar-cart cart-popup">
+                        <div className="cart-icon"><span className="count hidden">0</span><i className="fa fa-shopping-cart"></i></div>
+                      </a>   
+                      <a href="/search" className="visible-ms visible-xs pull-right navbar-cart">
+                        <div className="cart-icon"><i className="fa fa-search"></i></div>
+                      </a>
+                      <div className="visible-ms visible-xs">
+                        <h1>  
+                          <a className="navbar-brand" href="/" itemprop="url">
+                            <img src="//cdn.shopify.com/s/files/1/0787/9973/files/logo_550x.png?v=1487270357" alt="FurnishTime" itemprop="logo"/>
+                          </a>
+                        </h1>
+                      </div>
+                    </div>
+                    <nav className="wsmenu" role="navigation">
+                      <ul className="mobile-sub mega_menu wsmenu-list">
+                        <li>
+                          <a href="/">Home</a>
+                        </li>  
+                        <li className="mega_menu_container"><span className="wsmenu-click"><i className="wsmenu-arrow fa fa-angle-down"></i></span>
+                        <a href="/collections/all" className="twin" aria-controls="megamenu_items-furniture" aria-haspopup="true" aria-expanded="false">Furniture<span className="arrow"></span></a>
+                          <div className="megamenu clearfix">
+                            <ul className="wsmenu-sub-list" id="megamenu_items-furniture">
+                              <li className="col-lg-3 col-md-3 col-sm-3 mb20d link-list"><span className="wsmenu-click02"><i className="wsmenu-arrow fa fa-angle-down"></i></span>
+                                <h5><a href="#" aria-controls="megamenu_items-by-room" aria-haspopup="true" aria-expanded="false">By Room</a></h5>
+                                <ul id="megamenu_items-by-room">
+                                  <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                  <a href="/collections/living-room">Living Room</a>
+                                  </li>
+                                  <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                  <a href="/collections/bedroom">Bedroom</a>
+                                  </li>
+                                  <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                  <a href="/collections/dining-room">Dining Room</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li className="col-lg-3 col-md-3 col-sm-3 mb20d link-list"><span className="wsmenu-click02"><i className="wsmenu-arrow fa fa-angle-down"></i></span>
+                                <h5><a href="#" aria-controls="megamenu_items-by-brand" aria-haspopup="true" aria-expanded="false">By Brand</a></h5>
+                                <ul id="megamenu_items-by-brand">
+                                  <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                  <a href="/collections/asfalio">Asfalio</a>
+                                  </li>
+                                  <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                  <a href="/collections/flenefor">Flenefor</a>
+                                  </li>
+                                  <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                  <a href="/collections/garbini">Garbini</a>
+                                  </li>
+                                  <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                  <a href="/collections/opaquio">Opaquio</a>
+                                  </li>
+                                  <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                  <a href="/collections/varadini">Varadini</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li className="col-lg-3 col-md-3 col-sm-3 mb20d link-list"><span className="wsmenu-click02"><i className="wsmenu-arrow fa fa-angle-down"></i></span>
+                                <h5><a href="#" aria-controls="megamenu_items-by-style" aria-haspopup="true" aria-expanded="false">By Style</a></h5>
+                                <ul id="megamenu_items-by-style" >
+                                    <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                    <a href="http://showtime-furniture.myshopify.com/collections/all/style_classNameic">classNameic</a>
+                                    </li>
+                                    <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                    <a href="http://showtime-furniture.myshopify.com/collections/all/style_contemporary">Contemporary</a>
+                                    </li>
+                                    <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                    <a href="http://showtime-furniture.myshopify.com/collections/all/style_new-age">New Age</a>
+                                    </li>
+                                    <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                    <a href="http://showtime-furniture.myshopify.com/collections/all/style_rustic">Rustic</a>
+                                    </li>
+                                </ul>
+                              </li>
+                              <li className="col-lg-3 col-md-3 col-sm-3 mb20d link-list"><span className="wsmenu-click02"><i className="wsmenu-arrow fa fa-angle-down"></i></span>
+                                <h5><a href="#" aria-controls="megamenu_items-by-material" aria-haspopup="true" aria-expanded="false">By Material</a></h5>
+                                <ul id="megamenu_items-by-material">
+                                    <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                    <a href="http://showtime-furniture.myshopify.com/collections/all/material_leather">Leather</a>
+                                    </li>
+                                    <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                    <a href="http://showtime-furniture.myshopify.com/collections/all/material_microfiber">Microfiber</a>
+                                    </li>
+                                    <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                    <a href="http://showtime-furniture.myshopify.com/collections/all/material_microsuede">Microsuede</a>
+                                    </li>
+                                    <li className="col-lg-12 col-md-12 col-sm-12 link-list">
+                                    <a href="http://showtime-furniture.myshopify.com/collections/all/material_vinyl">Vinyl</a>
+                                    </li>
+                                </ul>
+                              </li>  
+                            </ul>
+                          </div>     
+                        </li>
+                        <li className="mega_menu_simple_container has-submenu"><span className="wsmenu-click"><i className="wsmenu-arrow fa fa-angle-down"></i></span>
+                          <a href="/pages/features" aria-controls="megamenu_items-features" aria-haspopup="true" aria-expanded="false">Features<span className="arrow"></span></a>
+                          <ul id="megamenu_items-features" className="wsmenu-submenu">
+         	                  <li>
+                              <a href="/pages/features">All Theme Features</a>
+                            </li>
+         	                  <li>
+                              <a href="/pages/faqs">FAQ</a>
+                            </li>
+                          </ul>  
+                        </li>
+                        <li>
+                          <a href="/blogs/news">Blog</a>
+                        </li>
+                        <li>
+                          <a href="/pages/about">About</a>
+                        </li>
+                        <li>
+                          <a href="/pages/contact">Contact</a>
+                        </li>
+                      </ul>
+                    </nav>
+                    <ul className="hidden-xs nav navbar-nav navbar-right">
+                      <li className="dropdown-grid no-open-arrow ">
+                        <a data-toggle="dropdown" data-href="/cart" href="javascript:void(0);" className="dropdown-toggle cart-popup" aria-expanded="true">
+                          <div className="cart-icon">
+                            <span className="count hidden">0</span><i className="fa fa-shopping-cart"></i>
+                          </div>
+                        </a>
+                        <div className="dropdown-grid-wrapper hidden">
+                          <div className="dropdown-menu no-padding col-xs-12 col-sm-9 col-md-7" role="menu">
+                            <div className="menu_c cart_menu">
+                              <div className="menu_title clearfix">
+                                <h4>Shopping Cart</h4>
+                              </div>
+                              <div className="cart_row">
+                                <div className="empty-cart">Your cart is currently empty.</div>
+                                <p><a href="javascript:void(0)" className="btn_c btn_close">Continue Shopping</a></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="dropdown-grid no-open-arrow">
+                        <a data-toggle="dropdown" href="javascript:;" className="dropdown-toggle" aria-expanded="true"><span className="icons"><i className="fa fa-user"></i></span></a>
+                        <div className="dropdown-grid-wrapper">
+                          <div className="dropdown-menu no-padding col-xs-12 col-sm-5 col-md-4 col-lg-3" role="menu">
+                            <div className="menu_c acc_menu">
+                              <div className="menu_title clearfix">
+                                <h4>My Account</h4>
+                              </div>
+                              <div className="login_frm">
+                                <p className="text-center">Welcome to FurnishTime!</p>
+                                <div className="remember">
+                                  <a href="/account/login" className="signin_btn btn_c">Login</a>
+                                  <a href="/account/register" className="signin_btn btn_c">Create Account</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="dropdown-grid no-open-arrow">
+                        <a data-toggle="dropdown" href="javascript:;" className="dropdown-toggle" aria-expanded="false"><span className="icons"><i className="fa fa-search"></i></span></a>
+                        <div className="dropdown-grid-wrapper" role="menu">
+                          <div className="dropdown-menu fixed_menu col-sm-4 col-lg-3 pl-pr-15">
+                            <form action="/search" method="get" role="search">
+                              <div className="menu_c search_menu">
+                                <div className="search_box">
+                                  
+                                  <input type="hidden" name="type" value="product"/>
+                                  
+                                  <input type="search" name="q" value="" className="txtbox" placeholder="Search" aria-label="Search"/>
+                                  <button className="btn btn-link" type="submit" value="Search"><span className="fa fa-search"></span></button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+        );
+    }
 }
 
-export default Header;
+export default Header;  

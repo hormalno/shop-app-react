@@ -12,13 +12,13 @@ body, #header .acc_menu .search_box .txtbox,
 #content .tabing .nav > li > a, #content .pro_main_c ul.start_list .infor_c .infor_c_inn p,
 #content .infor_c .infor_c_inn p, #footer .f_mid p, .rte, .rte p, .rte li, span.spr-badge, .spr-badge-caption, .spr-form-input-text,
 .spr-form-input-email, .modal-body .email_box .txtbox, .cart_menu .checkout_row p, .cart_menu .total_row ul li span.total_val, .entry-popup .modal-title:after, .search-results li a, .search-results .title, .list-view-item .article_search_text, .list-view-item__on-sale, .list-view-item__sold-out, .product-single__view-in-space {
-  color: white; }
+  color: wheat; }
 
 #content div.share span {
-  border-color: black; }
+  border-color: var(--body-text-color); }
 
 #content, .clear_btn:hover, .clear_btn:active, #footer .f_bot, .entry-popup .description-content {
-  background-color: white; }
+  background-color: var(--body-bg-color); }
 
 .order-discount-cart-wrapper svg path, .order-discount--title .icon-saletag path, .product-single__view-in-space .icon-3d-badge-full-color-element, #image-block .flex-caption .icon-3d-badge-full-color-element,
 #image-block .flex-caption .icon-video-badge-full-color-element {
@@ -31,13 +31,13 @@ body, #header .acc_menu .search_box .txtbox,
 #content .page_c a.next:hover span.fa, #content .page_c ul li.active a, .sidebar .side_box ul li div.post_detail a, .clear_all_tags_link a, #content .cart_tbl ul li h5 a, #content .slider_desc .price_c .old_price, #content .collection-view a i, #content a.backtocate .fa, #content .pro_main_c .desc_blk .review_row a.add_rew, #content .pro_main_c ul.start_list .tabing .nav-tabs > li.active > a span,
 #content .tabing .nav-tabs > li.active > a span, #content .pro_main_c ul.start_list .infor_c .infor_c_inn .add_c p a,
 #content .infor_c .infor_c_inn .add_c p a, #call-to-action .f_top .ftop_blk a:hover h5, .rte a, .product_payments_btns > #addToCart, .shopify-payment-button__more-options {
-  color: grey; }
+  color: wheat; }
 
 #content .blog_blk .blog_desc_inn p, .selector-wrapper select:focus:not(.focus-visible), .product_payments_btns > #addToCart {
-  border-color: black; }
+  border-color: var(--primary-color); }
 
 .sidebar .col_box ul li.active {
-  border: 1px solid black; }
+  border: 1px solid var(--primary-color); }
 
 #header .cart_menu .checkout_row .checkout_btn, #content .main_box .box_1 a.info_btn, #content .submit-form a.info_btn,
 #content .cart_c .cart_btn a.info_btn,
@@ -60,12 +60,12 @@ body, #header .acc_menu .search_box .txtbox,
 .spr-container button:active,
 .spr-container .btn:active,
 .spr-container .btn-primary:active, .product_payments_btns .shopify-payment-button__button--unbranded {
-  background-color: black; }
+  background-color: var(--primary-color); }
 
 #header #nav .navbar .dropdown-menu li > a:hover, #header .acc_menu a.sign_up:hover, #content .h_row_4 a:hover, #content .main_box .desc h5 a:hover, #content .blog-next-prev a:hover, .sidebar .side_box ul li a:hover, .sidebar .side_box ul li div.post_detail a:hover, #content .cart_tbl ul li h5 a:hover, #footer .f_mid a:hover, #footer .f_bot a:hover, .breadcrumb a:hover, .collection_custom_menu .panel-heading a:hover, a:hover, .promo-bar a:hover, .wsmenu > ul > li:hover > a,
 .mega_menu .megamenu li > a:hover,
 .mega_menu .wsmenu-submenu li > a:hover, #header #nav .navbar-nav > li > a:hover, #content .home_recentpost h2 a:hover, #content .title .title_right .next-prev a:hover, .clear_all_tags_link a:hover, .product_payments_btns .shopify-payment-button__button--unbranded:focus, .product_payments_btns .shopify-payment-button__button--unbranded:hover {
-  color: white; }
+  color: var(--link-hover-color); }
 
 #content .main_box .box_1 a.info_btn:hover, #content .submit-form a.info_btn:hover,
 #content .cart_c .cart_btn a.info_btn:hover,
@@ -79,7 +79,7 @@ body, #header .acc_menu .search_box .txtbox,
 .spr-container button:hover,
 .spr-container .btn:hover,
 .spr-container .btn-primary:hover, .cart_menu .checkout_row .checkout_btn:hover, .cart_menu .checkout_row .checkout_btn:active, .product_payments_btns > #addToCart:hover {
-  background-color: green; }
+  background-color: var(--link-hover-color); }
 
 h1, h2, h3, h4, h5, h6, .navbar-header a.navbar-cart, #header .right_menu > ul > li > a span, #header .menu_c h4, #header .cart_menu ul li .price, .banner_nav a.prev .fa-chevron-left, .banner_nav a.next .fa-chevron-right, #content .title .rss, #content .page_c a.prev,
 #content .page_c a.next, #content .page_c ul li a, .sidebar_1 h5 a, #content .cart_list ul li span, #content .cart_tbl ul li .txtbox, #content .cart_tbl ul li .price, #content .cart_tbl ul li .total-price,
@@ -93,17 +93,17 @@ h1, h2, h3, h4, h5, h6, .navbar-header a.navbar-cart, #header .right_menu > ul >
 #content .infor_c .infor_c_inn .add_c strong, .cart_menu h4, .cart_menu ul li .price, .cart_menu ul li .txtbox, .cart_menu ul li .total-price,
 .cart_menu ul li .savings_price,
 .cart_menu ul li .original_total_price, .store-availability-information__title, .store-availability-information__button, .store-availability-list__stock, .order-discount__item, .order-discount--cart-total {
-  color: black; }
+  color: var(--heading-text-color); }
 
 .promo-bar a, #header span.header-top-text p {
   color: inherit; }
 
 #header .top_menu ul li a, #header .hed_right ul li a {
-  color: green; }
+  color: var(--header-top-link-color); }
 
 #header .top_menu ul li a:hover, #header .hed_right ul li a:hover, #header a.navbar-brand:hover,
 #header a.text-logo:hover, .rte a:hover {
-  color: white; }
+  color: var(--link-hover-color); }
 
 #content .h_row_3 .btn_c:hover, .owl-theme .owl-nav :hover[class*=owl-] {
   background-color: var(--link-hover-color); }
@@ -114,10 +114,10 @@ h1, h2, h3, h4, h5, h6, .navbar-header a.navbar-cart, #header .right_menu > ul >
 #header .header_bot, .wsmenu-list > li > a, .megamenu, .wsmenu, .wsmenu-list li > .wsmenu-submenu,
 .wsmenu-list li > .megamenu,
 .wsmenu .wsmenu-list, .wsmenu-submenu li a {
-  background: green; }
+  background: var(--nav-bg-color); }
 
 #header .wsmenu > ul > li > a:hover {
-  color: white }
+  color: var(--nav-parent-hover-color); }
 
 #header .header_bot, .wsmenu-list > li > a, .megamenu, .wsmenu, .wsmenu-list li > .wsmenu-submenu,
 .wsmenu-list li > .megamenu,
