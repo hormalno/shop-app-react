@@ -13,4 +13,13 @@
     border-bottom: 1px dashed var(--link-hover-color);
 }
 
+.header_top_left {
+    float: left;
+}
 
+.header_top_right {
+    float: right;
+}
+
+#header .hed_right_2 ul {
+    display: inline-block; }

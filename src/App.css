@@ -1,4 +1,42 @@
 @charset "UTF-8";
+:root {
+  --body-text-color: white;
+  --primary-color: black;
+  --secondary-color: black;
+  --nav-link-text-size: 14px;
+  --nav-text-size: 14px;
+  --nav-text-transform: 1;
+  --nav-text-weight: 100%;
+  --nav-text-color: black;
+  --nav-bg-color: grey;
+  --header-text-color: green;
+  --header-bg-color: green;
+  --header-border-color: yellow;
+  --heading-font-weight: bold;
+  --heading-font-style: normal;
+  --heading-font: 15px Arial, sans-serif;
+  /* --body-text-bolder
+  --body-text-size
+  --body-text-weight
+  --body-font-style
+  --body-font: */
+  --footer-heading-color: grey;
+  --footer-link-color: white;
+  --footer-bg-color: grey;
+  --footer-text-color: black;
+  --compare-price-color: grey;
+  --regular-price-color: grey;
+  --content-link-color: black;
+  --content-heading-color: black;
+  --content-text-color: white;
+  --footer-link-color: white;
+  --button-text-color: red;
+  --link-hover-color: green;
+  --body-text-color: black;
+}
+
+
+
 body, #header .acc_menu .search_box .txtbox,
 #header .search_menu .search_box .txtbox, #header .cart_menu .checkout_row p, #header .acc_menu .txtbox, #header .acc_menu .remember, #header .acc_menu .forgot span, #content .main_box .desc p, #content .main_box .box_1 .product-details p, #content .comment_c .com_list ul li .datetxt, #content .comment_c .com_list ul li .replay, #content .comment_c .com_list ul li p, #content .blog_blk .blog_desc_inn p, #content .blog_blk .post_com p, #content .blog_blk .post_com ul li a span, #content .frm .frm_bot p, #content .frm .lbltxt,
 #content .sidebar .lbltxt, #content .frm .txtbox,
@@ -18,7 +56,7 @@ body, #header .acc_menu .search_box .txtbox,
   border-color: black; }
 
 #content, .clear_btn:hover, .clear_btn:active, #footer .f_bot, .entry-popup .description-content {
-  background-color: white; }
+  background-color: var(--primary-color) }
 
 .order-discount-cart-wrapper svg path, .order-discount--title .icon-saletag path, .product-single__view-in-space .icon-3d-badge-full-color-element, #image-block .flex-caption .icon-3d-badge-full-color-element,
 #image-block .flex-caption .icon-video-badge-full-color-element {
@@ -34,10 +72,10 @@ body, #header .acc_menu .search_box .txtbox,
   color: grey; }
 
 #content .blog_blk .blog_desc_inn p, .selector-wrapper select:focus:not(.focus-visible), .product_payments_btns > #addToCart {
-  border-color: black; }
+  border-color: var(--primary-color) }
 
 .sidebar .col_box ul li.active {
-  border: 1px solid black; }
+  border: 1px solid var(--primary-color) }
 
 #header .cart_menu .checkout_row .checkout_btn, #content .main_box .box_1 a.info_btn, #content .submit-form a.info_btn,
 #content .cart_c .cart_btn a.info_btn,
@@ -60,12 +98,12 @@ body, #header .acc_menu .search_box .txtbox,
 .spr-container button:active,
 .spr-container .btn:active,
 .spr-container .btn-primary:active, .product_payments_btns .shopify-payment-button__button--unbranded {
-  background-color: black; }
+  background-color: var(--primary-color) }
 
 #header #nav .navbar .dropdown-menu li > a:hover, #header .acc_menu a.sign_up:hover, #content .h_row_4 a:hover, #content .main_box .desc h5 a:hover, #content .blog-next-prev a:hover, .sidebar .side_box ul li a:hover, .sidebar .side_box ul li div.post_detail a:hover, #content .cart_tbl ul li h5 a:hover, #footer .f_mid a:hover, #footer .f_bot a:hover, .breadcrumb a:hover, .collection_custom_menu .panel-heading a:hover, a:hover, .promo-bar a:hover, .wsmenu > ul > li:hover > a,
 .mega_menu .megamenu li > a:hover,
 .mega_menu .wsmenu-submenu li > a:hover, #header #nav .navbar-nav > li > a:hover, #content .home_recentpost h2 a:hover, #content .title .title_right .next-prev a:hover, .clear_all_tags_link a:hover, .product_payments_btns .shopify-payment-button__button--unbranded:focus, .product_payments_btns .shopify-payment-button__button--unbranded:hover {
-  color: white; }
+  color: var(--primary-color)}
 
 #content .main_box .box_1 a.info_btn:hover, #content .submit-form a.info_btn:hover,
 #content .cart_c .cart_btn a.info_btn:hover,
@@ -79,7 +117,7 @@ body, #header .acc_menu .search_box .txtbox,
 .spr-container button:hover,
 .spr-container .btn:hover,
 .spr-container .btn-primary:hover, .cart_menu .checkout_row .checkout_btn:hover, .cart_menu .checkout_row .checkout_btn:active, .product_payments_btns > #addToCart:hover {
-  background-color: green; }
+  background-color: var(--primary-color) }
 
 h1, h2, h3, h4, h5, h6, .navbar-header a.navbar-cart, #header .right_menu > ul > li > a span, #header .menu_c h4, #header .cart_menu ul li .price, .banner_nav a.prev .fa-chevron-left, .banner_nav a.next .fa-chevron-right, #content .title .rss, #content .page_c a.prev,
 #content .page_c a.next, #content .page_c ul li a, .sidebar_1 h5 a, #content .cart_list ul li span, #content .cart_tbl ul li .txtbox, #content .cart_tbl ul li .price, #content .cart_tbl ul li .total-price,
@@ -93,13 +131,13 @@ h1, h2, h3, h4, h5, h6, .navbar-header a.navbar-cart, #header .right_menu > ul >
 #content .infor_c .infor_c_inn .add_c strong, .cart_menu h4, .cart_menu ul li .price, .cart_menu ul li .txtbox, .cart_menu ul li .total-price,
 .cart_menu ul li .savings_price,
 .cart_menu ul li .original_total_price, .store-availability-information__title, .store-availability-information__button, .store-availability-list__stock, .order-discount__item, .order-discount--cart-total {
-  color: black; }
+  color: var(--primary-color) }
 
 .promo-bar a, #header span.header-top-text p {
   color: inherit; }
 
 #header .top_menu ul li a, #header .hed_right ul li a {
-  color: green; }
+  color: var(--primary-color) }
 
 #header .top_menu ul li a:hover, #header .hed_right ul li a:hover, #header a.navbar-brand:hover,
 #header a.text-logo:hover, .rte a:hover {
@@ -114,10 +152,10 @@ h1, h2, h3, h4, h5, h6, .navbar-header a.navbar-cart, #header .right_menu > ul >
 #header .header_bot, .wsmenu-list > li > a, .megamenu, .wsmenu, .wsmenu-list li > .wsmenu-submenu,
 .wsmenu-list li > .megamenu,
 .wsmenu .wsmenu-list, .wsmenu-submenu li a {
-  background: green; }
+  background: var(--primary-color) }
 
 #header .wsmenu > ul > li > a:hover {
-  color: white }
+  color: var(--primary-color) }
 
 #header .header_bot, .wsmenu-list > li > a, .megamenu, .wsmenu, .wsmenu-list li > .wsmenu-submenu,
 .wsmenu-list li > .megamenu,
@@ -134,13 +172,13 @@ h1, h2, h3, h4, h5, h6, .navbar-header a.navbar-cart, #header .right_menu > ul >
 #content .tabing, #content .pro_main_c ul.start_list .con_frm,
 #content .con_frm, #content .pro_main_c ul.start_list .infor_c,
 #content .infor_c, .collection-box .rte, .quick-view, .map-section .placeholder-background .placeholder-svg, .image_with_text_container .text-container-wrapper, .search-results, .disclosure__toggle {
-  background-color: #fff; }
+  background-color: var(--primary-color) }
 
 .cart-icon .count, #content .main_box .box_1 .sold-out, .close-video-btn, #content div.share div.social-sharing ul li a, .sidebar .cat_box h2, .sidebar .cat_box h5, .sidebar .cat_box .down_btn, .sidebar .advanced-filters .active-filter a:hover:after, #content .cart_list ul li.active span, #content .pro_main_c .desc_blk .review_row div.share div.social-sharing ul li a {
-  color: #fff; }
+  color: var(--primary-color) }
 
 #image-block .flex-caption svg {
-  fill: white; }
+  fill: var(--primary-color) }
 
 #header .cart_menu .checkout_row .checkout_btn, #header .cart_menu .checkout_row .checkout_btn:hover, #header .cart_menu .checkout_row .checkout_btn:active, .btn_c, .btn_c:hover, .btn_c:active, #content .h_row_3 .btn_c, #content .main_box .box_1 .on-sale, #content .main_box .box_1 a.info_btn, #content .main_box:hover .box_1 a.more_btn, #content .main_box:hover .box_1 a.cart_btn_1, #content .submit-form a.info_btn,
 #content .cart_c .cart_btn a.info_btn,
@@ -173,14 +211,14 @@ h1, h2, h3, h4, h5, h6, .navbar-header a.navbar-cart, #header .right_menu > ul >
 
 #content .h_row_1 a.div-link,
 #content .h_row_2 a.div-link, #content .h_row_1 p, #content .h_row_2 p, .remove_item_button {
-  color: #000; }
+  color: var(--primary-color) }
 
 .vidcover, .sidebar .advanced-filters .active-filter a:after, .sidebar .advanced-filters .active-filter a:hover:after {
-  background-color: #000; }
+  background-color: var(--primary-color) }
 
 #content .h_row_1 a.div-link .box,
 #content .h_row_2 a.div-link .box {
-  border-color: #fff; }
+  border-color: var(--primary-color) }
 
 .product_payments_btns > #addToCart:hover {
   border-color: transparent; }
