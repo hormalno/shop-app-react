@@ -1,25 +1,92 @@
-.promo-bar {
+/*----------------
+Promo Bar
+-----------------*/
+  .promo-bar {
+    width:100%;
     text-align: center;
-    width: 100%;
-    background: rgb(106, 153, 106);
-    color: white;
-    padding: 10px 0; 
-}
-.promo-bar a {
-    border-bottom: 1px dashed var(--promo-bar-text-color);
-}
-.promo-bar a:hover {
-    color: white;
-    border-bottom: 1px dashed var(--link-hover-color);
-}
+    background:#abbda5;
+    padding:5px 0 1px;
+    color:#ffffff;
+  }
+  .promo-bar a {
+    color:#ffffff !important;
+    border-bottom:1px dashed #ffffff;
+  }
+  .promo-bar a:hover {
+    color:#8a756b !important;
+    border-bottom:1px dashed #8a756b;
+  }
+  .promo-bar p{
+    font-size:14px;
+  }
 
-.header_top_left {
+/*----------------
+Header
+-----------------*/
+  #header .header_top {
+    padding:10px 0 70px;
+    background:#ebe5e2;
+  }
+  #header .top_menu {
+    float:left;
+  }
+  #header .navbar-brand {
+    font-size: 26px;
+    padding:0 15px 0 0;
+  }
+  #header a.navbar-brand {
+    color:#282727;
+    height: auto;
+  }
+  #header .navbar-brand img {
+    max-height:140px;
+    max-width:350px;
+    padding:5px 0;
+  }
+  #header .hed_right {
+    float:right;
+    padding-top: 3px;
+  }
+  #header .hed_right ul {
+    margin:0;
+    padding:0;
+    display: block;
+  }
+  #header .hed_right ul li {
+    margin:0;
+    padding:0 15px;
     float: left;
-}
-
-.header_top_right {
-    float: right;
-}
-
-#header .hed_right_2 ul {
-    display: inline-block; }
+    display: block;
+    border-left:1px solid #ebe5e2;
+    font-weight:normal;
+  }
+  #header .hed_right ul li:first-child {
+    padding-left:0;
+    border-left:none;
+  }
+  #header .hed_right ul li:last-child {
+    padding-right:0;
+  }
+  #header .hed_right ul li a {
+    margin:0;
+    padding:0;
+    display:block;
+    color:#898989;
+  }
+  #header .hed_right ul li a:hover {
+    color:#8a756b;
+  }
+  #header .hed_right .header-contact {
+	clear:both;
+	float:right;
+	margin-top:7px;
+ }
+ #header .hed_right .header-contact span{
+	padding-right: 4px;
+ }
+ #header .header_bot {
+    border-top:1px solid #ebe5e2;
+    background: #ffffff;
+    position:relative;
+    box-shadow: 0 2px 2px rgba(11, 25, 28, .12);
+  }

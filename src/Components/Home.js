@@ -5,7 +5,6 @@ class Home extends Component {
     render() {
         return (
         <div className="wsmenucontainer clearfix">
-            <div className="overlapblackbg"></div>
             <Header />
         </div>
         );
