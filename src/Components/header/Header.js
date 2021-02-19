@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
 import MegaMenu from "./MegaMenu";
 import './Header.css';
+import NavBtn from './NavBtn';
 
 function Header(props) {
-    const items = [
+    const items = 
         {
-            label: 'Main Menu', icon: 'fa fa-caret-down',
+            label: 'MainMenu', icon: 'fa fa-caret-down',
             items: [
                 
                     {
                         label: 'Column 1',
-                        items: [{label: 'Video 1.1'}, {separator: true},{label: 'Video 1.2'}]
+                        items: [{label: 'Video 1.1'},{label: 'Video 1.2'}]
                     },
                     {
                         label: 'Column 2',
@@ -27,7 +28,7 @@ function Header(props) {
                 
             ]
         }
-    ];
+    ;
 
     return <div>
                 <div className="promo-bar">
@@ -58,14 +59,14 @@ function Header(props) {
                     </div>
                     <div className="header_bot ">
                         <div className="container">
-                            <nav className="navbar-nav">
-                                <ul className="">
-                                    <li><Link to="/">Home</Link></li>
+                            <nav className="navbar">
+                                <ul className="menu-menu">
+                                    <NavBtn><Link to="/">Home</Link></NavBtn>
                                     {/* <li className="mega_menu_container"><span className="wsmenu-click"><i className="wsmenu-arrow fa fa-angle-down"></i></span>
                                     <Link to="/" className="twin" aria-controls={props.children} aria-haspopup="true" aria-expanded="false">Furniture<span className="arrow"></span></Link> */}
                                     <MegaMenu model={items}/>
-                                    <li><Link to="/">About</Link></li>
-                                    <li><Link to="/">Contact</Link></li>
+                                    <NavBtn><Link to="/">About</Link></NavBtn>
+                                    <NavBtn><Link to="/">Contact</Link></NavBtn>
                                 </ul>
                             </nav>
                         </div>

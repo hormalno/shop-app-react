@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import DomHandler from 'domhandler';
 import classNames from 'classnames';
-import './MegaMenu.css';
+// import './MegaMenu.css';
 import { Link } from 'react-router-dom';
+import NavBtn from './NavBtn';
 
 class MegaMenu extends Component {
 
@@ -18,7 +18,7 @@ class MegaMenu extends Component {
 
   static propTypes = {
       id: PropTypes.string,
-      model: PropTypes.array,
+    //   model: PropTypes.array,
       style: PropTypes.object,
       className: PropTypes.string,
       orientation: PropTypes.string
@@ -100,101 +100,6 @@ class MegaMenu extends Component {
       event.preventDefault();
   }
 
-  onCategoryKeyDown(event, item) {
-      let listItem = event.currentTarget.parentElement;
-
-      switch(event.which) {
-          //down
-          case 40:
-              if (this.isHorizontal())
-                  this.expandMenu(item);
-              else
-                  this.navigateToNextItem(listItem);
-
-              event.preventDefault();
-          break;
-
-          //up
-          case 38:
-              if (this.isVertical())
-                  this.navigateToPrevItem(listItem);
-              else if (item.items && item === this.state.activeItem)
-                  this.collapseMenu();
-
-              event.preventDefault();
-          break;
-
-          //right
-          case 39:
-              if (this.isHorizontal())
-                  this.navigateToNextItem(listItem);
-              else
-                  this.expandMenu(item);
-
-              event.preventDefault()
-          break;
-
-          //left
-          case 37:
-              if (this.isHorizontal())
-                  this.navigateToPrevItem(listItem);
-              else if (item.items && item === this.state.activeItem)
-                  this.collapseMenu();
-
-              event.preventDefault();
-          break;
-
-          default:
-          break;
-      }
-  }
-
-  expandMenu(item) {
-      if (item.items) {
-          this.setState({
-              activeItem: item
-          });
-      }
-  }
-
-  collapseMenu(item) {
-      this.setState({
-          activeItem: null
-      });
-  }
-
-  findNextItem(item) {
-      let nextItem = item.nextElementSibling;
-
-      if (nextItem)
-          return DomHandler.hasClass(nextItem, 'p-disabled') || !DomHandler.hasClass(nextItem, 'p-menuitem') ? this.findNextItem(nextItem) : nextItem;
-      else
-          return null;
-  }
-
-  findPrevItem(item) {
-      let prevItem = item.previousElementSibling;
-
-      if (prevItem)
-          return DomHandler.hasClass(prevItem, 'p-disabled') || !DomHandler.hasClass(prevItem, 'p-menuitem') ? this.findPrevItem(prevItem) : prevItem;
-      else
-          return null;
-  }
-
-  navigateToNextItem(listItem) {
-      let nextItem = this.findNextItem(listItem);
-      if (nextItem) {
-          nextItem.children[0].focus();
-      }
-  }
-
-  navigateToPrevItem(listItem) {
-      let prevItem = this.findPrevItem(listItem);
-      if (prevItem) {
-          prevItem.children[0].focus();
-      }
-  }
-
   isHorizontal() {
       return this.props.orientation === 'horizontal';
   }
@@ -209,23 +114,23 @@ class MegaMenu extends Component {
 
       switch(length) {
           case 2:
-              columnClass= 'p-megamenu-col-6';
+              columnClass= 'col-6';
           break;
 
           case 3:
-              columnClass= 'p-megamenu-col-4';
+              columnClass= 'col-4';
           break;
 
           case 4:
-              columnClass= 'p-megamenu-col-3';
+              columnClass= 'col-3';
           break;
 
           case 6:
-              columnClass= 'p-megamenu-col-2';
+              columnClass= 'col-2';
           break;
 
           default:
-              columnClass= 'p-megamenu-col-12';
+              columnClass= 'col-12';
           break;
       }
 
@@ -272,8 +177,7 @@ class MegaMenu extends Component {
   renderSubmenuItem(item, index) {
       if (item.separator) {
           return this.renderSeparator(index);
-      }
-      else {
+      } else {
           const className = classNames('p-menuitem', item.className);
           const linkClassName = classNames('p-menuitem-link', {'p-disabled': item.disabled});
           const iconClassName = classNames(item.icon, 'p-menuitem-icon');
@@ -287,25 +191,14 @@ class MegaMenu extends Component {
                  role="menuitem">
                   {icon}
                   {label}
-                  {/* <Ripple /> */}
               </a>
           );
 
-          if (item.template) {
-              const defaultContentOptions = {
-                  onClick: (event) => this.onLeafClick(event, item),
-                  className: linkClassName,
-                  labelClassName: 'p-menuitem-text',
-                  iconClassName,
-                  element: content,
-                  props: this.props
-              };
-
-              // content = ObjectUtils.getJSXElement(item.template, item, defaultContentOptions);
-          }
-
           return (
-              <li key={item.label + '_' + index} className={className} style={item.style} role="none">
+              <li key={item.label + '_' + index} 
+              className={className} 
+              style={item.style} 
+              role="none">
                   {content}
               </li>
           );
@@ -318,11 +211,7 @@ class MegaMenu extends Component {
           return this.renderSubmenuItem(item, index);
       });
 
-      return (
-          <React.Fragment key={submenu.label}>
-              {items}
-          </React.Fragment>
-      );
+      return items;
   }
 
   renderSubmenus(column) {
@@ -335,13 +224,13 @@ class MegaMenu extends Component {
 
   renderColumn(category, column, index, columnClassName) {
       const submenus = this.renderSubmenu(column);
+      const className = classNames('dropdown-item',columnClassName)
 
       return (
-          <div key={category.label + '_column_' + index} className={columnClassName}>
-              <h4>{column.label}</h4>
-              <ul className="p-megamenu-submenu" role="menu">
+          <div key={category.label + '_column_' + index} className={className}>
+              <div className="p-megamenu-submenu" role="menu">
                   {submenus}
-              </ul>
+              </div>
           </div>
       );
   }
@@ -362,88 +251,66 @@ class MegaMenu extends Component {
 
   renderCategoryPanel(category) {
       if (category.items) {
-          const columns = this.renderColumns(category);
+        const columns = this.renderColumns(category);
 
-          return (
-              <div className="p-megamenu-panel">
-                  <div className="p-megamenu-grid"> 
-                      {columns}
-                  </div>
-              </div>
-          );
+        return (
+            <div className="dropdown-menu show">
+                {columns}
+            </div>
+        );
       }
 
       return null;
   }
 
   renderCategory(category, index) {
-      const className = classNames('p-menuitem mega-drop-down', {'p-menuitem-active': category === this.state.activeItem}, category.className);
+      const className = classNames('dropdown', {'p-menuitem-active': category === this.state.activeItem}, category.className);
       const linkClassName = classNames('p-menuitem-link', {'p-disabled': category.disabled});
       const iconClassName = classNames('p-menuitem-icon', category.icon);
       const icon = category.icon && <span className={iconClassName}></span>;
       const label = category.label && <span className="p-menuitem-text">{category.label}</span>;
-      // const itemContent = category.template ? ObjectUtils.getJSXElement(category.template, category) : null;
-      const itemContent = null;
       const submenuIcon = this.renderSubmenuIcon(category);
-      const panel = this.renderCategoryPanel(category);
+      const panel = () => {
+        if (this.state.activeItem) {
+            return this.renderCategoryPanel(category);
+        } else {
+            return null;
+        }
+      };
+        
 
       return (
-          <li key={category.label + '_' + index} 
-              className={className} 
-              style={category.style} 
-              onMouseEnter={e => this.onCategoryMouseEnter(e, category)} 
-              role="none">
-              <Link to={category.url || '/'} 
-                className={linkClassName} 
-                target={category.target} 
-                onClick={e => this.onCategoryClick(e, category)} 
-                onKeyDown={e => this.onCategoryKeyDown(e, category)}
-                role="menuitem" 
-                aria-haspopup={category.items != null} >
-                  {icon}
-                  {label}
-                  {itemContent}
-                  {submenuIcon}
-                  {/* <Ripple /> */}
-              </Link>
-              {panel}
-          </li>
+          <NavBtn key={category.label + '_' + index} 
+            className={className}
+            onMouseEnter={e => this.onCategoryMouseEnter(e, category)} >
+            <Link to={category.url || '/'} 
+            className={linkClassName} 
+            target={category.target} 
+            onClick={e => this.onCategoryClick(e, category)}
+            aria-haspopup={category.items != null} 
+            aria-expanded="false">
+                {icon}
+                {label}
+                {submenuIcon}
+            </Link>
+            {panel()}
+          </NavBtn>
       );
   }
 
   renderMenu() {
       if (this.props.model) {
-          return (
-              this.props.model.map((item, index) => {
-                  return this.renderCategory(item, index, true);
-              })
-          );
+        return this.renderCategory(this.props.model);
       }
 
       return null;
   }
 
-  renderCustomContent() {
-      if(this.props.children) {
-          return (
-              <div className="p-megamenu-custom">
-                  {this.props.children}
-              </div>
-          );
-      }
-
-      return null;
-  }
 
   render() {
-      const className = classNames('mega-menu', {
-          'p-megamenu-horizontal': this.props.orientation === 'horizontal',
-          'p-megamenu-vertical': this.props.orientation === 'vertical'
-      }, this.props.className);
-      const menu = this.renderMenu();
-      const customContent = this.renderCustomContent();
-
-      return menu;
+    const menu = this.renderMenu();
+    console.log(this.state.activeItem)
+    return menu;
   }
 }
 
