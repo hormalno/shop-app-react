@@ -2,33 +2,86 @@ import { Link } from "react-router-dom";
 import MegaMenu from "./MegaMenu";
 import './Header.css';
 import NavBtn from './NavBtn';
+import { Container } from "react-bootstrap";
 
 function Header(props) {
-    const items = 
-        {
-            label: 'MainMenu', icon: 'fa fa-caret-down',
-            items: [
+    const items = {
+        items: [
+                    [
+                        {
+                            label: 'Column 1',
+                            items: [{label: 'Video 1.1'},{separator:true},{label: 'Video 1.2'}]
+                        },
+                        {
+                            label: 'Column 2',
+                            items: [{label: 'Video 2.1'}, {label: 'Video 2.2'}]
+                        },
+                        {
+                            label: 'Column 3',
+                            items: [{label: 'Video 3.1'}, {label: 'Video 3.2'}]
+                        },
+                        {
+                            label: 'Column 4',
+                            items: [{label: 'Video 4.1'}, {label: 'Video 4.2'}]
+                        }
+                    ],
+                    [
+                        {
+                            label: 'Column 1',
+                            items: [{label: 'Video 1.1'},{separator:true},{label: 'Video 1.2'}]
+                        },
+                        {
+                            label: 'Column 2',
+                            items: [{label: 'Video 2.1'}, {label: 'Video 2.2'}]
+                        },
+                        {
+                            label: 'Column 3',
+                            items: [{label: 'Video 3.1'}, {label: 'Video 3.2'}]
+                        },
+                        {
+                            label: 'Column 4',
+                            items: [{label: 'Video 4.1'}, {label: 'Video 4.2'}]
+                        }
+                    ],
+                    [
+                        {
+                            label: 'Column 1',
+                            items: [{label: 'Video 1.1'},{separator:true},{label: 'Video 1.2'}]
+                        },
+                        {
+                            label: 'Column 2',
+                            items: [{label: 'Video 2.1'}, {label: 'Video 2.2'}]
+                        },
+                        {
+                            label: 'Column 3',
+                            items: [{label: 'Video 3.1'}, {label: 'Video 3.2'}]
+                        },
+                        {
+                            label: 'Column 4',
+                            items: [{label: 'Video 4.1'}, {label: 'Video 4.2'}]
+                        }
+                    ],
+                    [
+                        {
+                            label: 'Column 1',
+                            items: [{label: 'Video 1.1'},{separator:true},{label: 'Video 1.2'}]
+                        },
+                        {
+                            label: 'Column 2',
+                            items: [{label: 'Video 2.1'}, {label: 'Video 2.2'}]
+                        },
+                        {
+                            label: 'Column 3',
+                            items: [{label: 'Video 3.1'}, {label: 'Video 3.2'}]
+                        },
+                        {
+                            label: 'Column 4',
+                            items: [{label: 'Video 4.1'}, {label: 'Video 4.2'}]
+                        }
+                    ]
                 
-                    {
-                        label: 'Column 1',
-                        items: [{label: 'Video 1.1'},{label: 'Video 1.2'}]
-                    },
-                    {
-                        label: 'Column 2',
-                        items: [{label: 'Video 2.1'}, {label: 'Video 2.2'}]
-                    },
-                    {
-                        label: 'Column 3',
-                        items: [{label: 'Video 3.1'}, {label: 'Video 3.2'}]
-                    },
-                    {
-                        label: 'Column 4',
-                        items: [{label: 'Video 4.1'}, {label: 'Video 4.2'}]
-                    }
-                
-            ]
-        }
-    ;
+                ]
+    };
 
     return <div>
                 <div className="promo-bar">
@@ -36,7 +89,7 @@ function Header(props) {
                 </div>
                 <div id="header">
                     <div className="header_top">
-                        <div className="container">
+                        <Container>
                             <div className="top_menu hidden-ms hidden-xs">
                                 <a className="navbar-brand" href="/">
                                     <img src="//cdn.shopify.com/s/files/1/0787/9973/files/logo_550x.png?v=1487270357" alt="FurnishTime" className="img-responsive" />
@@ -55,21 +108,21 @@ function Header(props) {
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </Container>
                     </div>
                     <div className="header_bot ">
-                        <div className="container">
-                            <nav className="navbar">
-                                <ul className="menu-menu">
-                                    <NavBtn><Link to="/">Home</Link></NavBtn>
-                                    {/* <li className="mega_menu_container"><span className="wsmenu-click"><i className="wsmenu-arrow fa fa-angle-down"></i></span>
-                                    <Link to="/" className="twin" aria-controls={props.children} aria-haspopup="true" aria-expanded="false">Furniture<span className="arrow"></span></Link> */}
-                                    <MegaMenu model={items}/>
-                                    <NavBtn><Link to="/">About</Link></NavBtn>
-                                    <NavBtn><Link to="/">Contact</Link></NavBtn>
-                                </ul>
-                            </nav>
-                        </div>
+                        <nav className="navbar">
+                            <div className="container">
+                            <ul className="menu-menu">
+                                <NavBtn><Link to="/">Home</Link></NavBtn>
+                                {/* <li className="mega_menu_container"><span className="wsmenu-click"><i className="wsmenu-arrow fa fa-angle-down"></i></span>
+                                <Link to="/" className="twin" aria-controls={props.children} aria-haspopup="true" aria-expanded="false">Furniture<span className="arrow"></span></Link> */}
+                                <MegaMenu model={items} label="Shop"/>
+                                <NavBtn><Link to="/">About</Link></NavBtn>
+                                <NavBtn><Link to="/">Contact</Link></NavBtn>
+                            </ul>
+                            </div>
+                        </nav>
                     </div>
                 </div>
             </div>;

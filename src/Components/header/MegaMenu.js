@@ -134,7 +134,7 @@ class MegaMenu extends Component {
           break;
       }
 
-      return columnClass;
+      return 'col';
   }
 
   componentDidMount() {
@@ -158,13 +158,13 @@ class MegaMenu extends Component {
 
   renderSeparator(index) {
       return (
-          <li key={'separator_' + index} className="p-menu-separator" role="separator"></li>
+          <li key={'separator_' + index} className="divider"></li>
       );
   }
 
   renderSubmenuIcon(item) {
       if (item.items) {
-          const className = classNames('p-submenu-icon pi', {'pi-angle-down': this.isHorizontal(), 'pi-angle-right': this.isVertical()});
+          const className = classNames('fa fa-caret-down', {'pi-angle-down': this.isHorizontal(), 'pi-angle-right': this.isVertical()});
 
           return (
               <span className={className}></span>
@@ -211,7 +211,9 @@ class MegaMenu extends Component {
           return this.renderSubmenuItem(item, index);
       });
 
-      return items;
+      return (<React.Fragment>
+                {items}
+              </React.Fragment>);
   }
 
   renderSubmenus(column) {
@@ -223,12 +225,12 @@ class MegaMenu extends Component {
   }
 
   renderColumn(category, column, index, columnClassName) {
-      const submenus = this.renderSubmenu(column);
+      const submenus = this.renderSubmenus(column);
       const className = classNames('dropdown-item',columnClassName)
 
       return (
           <div key={category.label + '_column_' + index} className={className}>
-              <div className="p-megamenu-submenu" role="menu">
+              <div className="p-megamenu-submenu">
                   {submenus}
               </div>
           </div>
@@ -255,7 +257,9 @@ class MegaMenu extends Component {
 
         return (
             <div className="dropdown-menu show">
+                <div className="row">
                 {columns}
+                </div>
             </div>
         );
       }
@@ -263,12 +267,12 @@ class MegaMenu extends Component {
       return null;
   }
 
-  renderCategory(category, index) {
-      const className = classNames('dropdown', {'p-menuitem-active': category === this.state.activeItem}, category.className);
+  renderCategory(props, index) {
+      const category = props.model
       const linkClassName = classNames('p-menuitem-link', {'p-disabled': category.disabled});
-      const iconClassName = classNames('p-menuitem-icon', category.icon);
+      const iconClassName = classNames('fa', category.icon);
       const icon = category.icon && <span className={iconClassName}></span>;
-      const label = category.label && <span className="p-menuitem-text">{category.label}</span>;
+      const label = props.label && <span className="p-menuitem-text">{props.label}</span>;
       const submenuIcon = this.renderSubmenuIcon(category);
       const panel = () => {
         if (this.state.activeItem) {
@@ -280,15 +284,14 @@ class MegaMenu extends Component {
         
 
       return (
-          <NavBtn key={category.label + '_' + index} 
-            className={className}
+          <NavBtn key={props.label + '_' + index} 
             onMouseEnter={e => this.onCategoryMouseEnter(e, category)} >
             <Link to={category.url || '/'} 
             className={linkClassName} 
             target={category.target} 
             onClick={e => this.onCategoryClick(e, category)}
             aria-haspopup={category.items != null} 
-            aria-expanded="false">
+            aria-expanded="true">
                 {icon}
                 {label}
                 {submenuIcon}
@@ -300,7 +303,7 @@ class MegaMenu extends Component {
 
   renderMenu() {
       if (this.props.model) {
-        return this.renderCategory(this.props.model);
+        return this.renderCategory(this.props);
       }
 
       return null;
