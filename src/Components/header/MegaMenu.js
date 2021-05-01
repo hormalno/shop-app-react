@@ -134,7 +134,7 @@ class MegaMenu extends Component {
           break;
       }
 
-      return 'col';
+      return columnClass;
   }
 
   componentDidMount() {
@@ -226,7 +226,7 @@ class MegaMenu extends Component {
 
   renderColumn(category, column, index, columnClassName) {
       const submenus = this.renderSubmenus(column);
-      const className = classNames('dropdown-item',columnClassName)
+      const className = classNames('dropdown-item', columnClassName)
 
       return (
           <div key={category.label + '_column_' + index} className={className}>
@@ -258,7 +258,7 @@ class MegaMenu extends Component {
         return (
             <div className="dropdown-menu show">
                 <div className="row">
-                {columns}
+                    {columns}
                 </div>
             </div>
         );
@@ -269,7 +269,7 @@ class MegaMenu extends Component {
 
   renderCategory(props, index) {
       const category = props.model
-      const linkClassName = classNames('p-menuitem-link', {'p-disabled': category.disabled});
+      const linkClassName = classNames('menuitem-link', {'p-disabled': category.disabled});
       const iconClassName = classNames('fa', category.icon);
       const icon = category.icon && <span className={iconClassName}></span>;
       const label = props.label && <span className="p-menuitem-text">{props.label}</span>;

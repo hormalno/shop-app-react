@@ -15,14 +15,6 @@ function Header(props) {
                         {
                             label: 'Column 2',
                             items: [{label: 'Video 2.1'}, {label: 'Video 2.2'}]
-                        },
-                        {
-                            label: 'Column 3',
-                            items: [{label: 'Video 3.1'}, {label: 'Video 3.2'}]
-                        },
-                        {
-                            label: 'Column 4',
-                            items: [{label: 'Video 4.1'}, {label: 'Video 4.2'}]
                         }
                     ],
                     [
@@ -47,14 +39,6 @@ function Header(props) {
                         {
                             label: 'Column 1',
                             items: [{label: 'Video 1.1'},{separator:true},{label: 'Video 1.2'}]
-                        },
-                        {
-                            label: 'Column 2',
-                            items: [{label: 'Video 2.1'}, {label: 'Video 2.2'}]
-                        },
-                        {
-                            label: 'Column 3',
-                            items: [{label: 'Video 3.1'}, {label: 'Video 3.2'}]
                         },
                         {
                             label: 'Column 4',
@@ -112,16 +96,14 @@ function Header(props) {
                     </div>
                     <div className="header_bot ">
                         <nav className="navbar">
-                            <div className="container">
+                           
                             <ul className="menu-menu">
-                                <NavBtn><Link to="/">Home</Link></NavBtn>
-                                {/* <li className="mega_menu_container"><span className="wsmenu-click"><i className="wsmenu-arrow fa fa-angle-down"></i></span>
-                                <Link to="/" className="twin" aria-controls={props.children} aria-haspopup="true" aria-expanded="false">Furniture<span className="arrow"></span></Link> */}
+                                <NavBtn><Link className="menuitem-link" to="/">Home</Link></NavBtn>
                                 <MegaMenu model={items} label="Shop"/>
-                                <NavBtn><Link to="/">About</Link></NavBtn>
-                                <NavBtn><Link to="/">Contact</Link></NavBtn>
+                                <NavBtn><Link className="menuitem-link" to="/">About</Link></NavBtn>
+                                <NavBtn><Link className="menuitem-link" to="/">Contact</Link></NavBtn>
                             </ul>
-                            </div>
+                            
                         </nav>
                     </div>
                 </div>
