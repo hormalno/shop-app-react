@@ -1,40 +1,48 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import InfoBox from './InfoBox.js';
 import LazyLoadedCarousel from "./LazyLoadedCarousel.js";
 import './Main.css';
 
+const imageCarousel = {
+     images: [        
+        {
+            imageSource: '',
+            imageAlt: 'first slide',
+            imageHeader: 'First Slide',
+            imageText: 'asd'
+        },
+        {
+            imageSource: '',
+            imageAlt: 'second slide',
+            imageHeader: 'Second Slide',
+            imageText: 'zxc'
+        }
+    ]
+};
 
 class Main extends Component {
     // style="padding-top: 30px;"
     // vidcover  style="height: 937px; width: 807px;"
     // iframe style="height: 937px; width: 1665.78px;"
+
     
    render() {
 
-    const LiMain = styled.li `
-        width: 100%; 
-        float: left; 
-        margin-right: -100%; 
-        position: relative; 
-        opacity: 0; 
-        display: block; 
-        z-index: 1;
-    `
+    // const LiMain = styled.li `
+    //     width: 100%; 
+    //     float: left; 
+    //     margin-right: -100%; 
+    //     position: relative; 
+    //     opacity: 0; 
+    //     display: block; 
+    //     z-index: 1;
+    // `
+
        return (
     <div id="content" >
         <div id="shopify-section-slideshow" class="shopify-section">
-            <LazyLoadedCarousel>
-                <img
-                            className="d-block w-100"
-                            src="https://www.pinterest.com/pin/439171401135450684/"
-                            alt="First slide"
-                        />
-                {/* <Carousel.Caption> */}
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                {/* </Carousel.Caption> */}
-            </LazyLoadedCarousel>
+            <LazyLoadedCarousel slides={imageCarousel.images}/>
         </div>
         <div id="shopify-section-featured-collections" class="shopify-section">
             <div class="container" data-section-id="featured-collections" data-section-type="featured-collections-section">

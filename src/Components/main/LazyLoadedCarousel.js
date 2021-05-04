@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Carousel from 'react-bootstrap/Carousel'
+import image01 from './image001.jpg'
 
 
 class LazyLoadedCarousel extends Component {
@@ -7,24 +8,38 @@ class LazyLoadedCarousel extends Component {
         super(props);
 
         this.state = {
-            slides: null,
+            slides: this.props.slides
         };
 
-        this.loadSlides = this.loadSlides.bind(this);
+    }
+
+    renderSlide(item) {
+        return (
+            <Carousel.Item>
+                <img
+                src={image01}
+                alt={item.imageAlt}
+                />
+                <Carousel.Caption>
+                    <h3>{item.imageHeader}</h3>
+                    <p>{item.imageText}</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+        )
     }
 
     loadSlides() {
-        this.setState({
-            slides: this.props.children,
+        const slides = this.state.slides.map((item,index) => {
+            return this.renderSlide(item);
         });
+
+        return slides;
     }
 
     render() {
         return (
                 <Carousel fade>
-                    <Carousel.Item>
-                        {this.state.slides}
-                    </Carousel.Item>
+                    {this.loadSlides()}
                 </Carousel>
         );
     }
