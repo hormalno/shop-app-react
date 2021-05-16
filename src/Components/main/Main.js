@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
 // import styled from 'styled-components';
 import InfoBox from './InfoBox.js';
-import LazyLoadedCarousel from "./LazyLoadedCarousel.js";
+import InfoBox2 from './InfoBox2.js';
+// import LazyLoadedCarousel from "./LazyLoadedCarousel.js";
+import Carousel2 from "./Carousel2.js";
 import './Main.css';
 
-const imageCarousel = {
-     images: [        
-        {
-            imageSource: '',
-            imageAlt: 'first slide',
-            imageHeader: 'First Slide',
-            imageText: 'asd'
-        },
-        {
-            imageSource: '',
-            imageAlt: 'second slide',
-            imageHeader: 'Second Slide',
-            imageText: 'zxc'
-        }
-    ]
-};
+// const imageCarousel = {
+//      images: [        
+//         {
+//             imageSource: '',
+//             imageAlt: 'first slide',
+//             imageHeader: 'First Slide',
+//             imageText: 'asd'
+//         },
+//         {
+//             imageSource: '',
+//             imageAlt: 'second slide',
+//             imageHeader: 'Second Slide',
+//             imageText: 'zxc'
+//         }
+//     ]
+// };
 
 class Main extends Component {
     // style="padding-top: 30px;"
@@ -40,12 +42,10 @@ class Main extends Component {
     // `
 
        return (
-    <div id="content" >
-        <div>
-            <LazyLoadedCarousel slides={imageCarousel.images}/>
-        </div>
+    <div>
+        <Carousel2 />
 
-        <div className="container text-center my-3">
+        {/* <div className="container text-center my-3">
             <h2 className="font-weight-light">Bootstrap 4 - Multi Item Carousel</h2>
             <div className="row mx-auto my-auto">
                 <div id="recipeCarousel" className="carousel slide w-100" data-ride="carousel">
@@ -89,10 +89,12 @@ class Main extends Component {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> */}
+
+        <InfoBox2 />
        
         
-        <div id="shopify-section-video" className="shopify-section home-video-section">
+        <div id="" className="container-fluid">
             <div data-section-id="video" data-section-type="video-section" className="mb30  video-section-video" data-videotype="youtube" data-videodisplay="autoplay_banner">
                 <div className=" hero-video-wrapper home-video section-video hero--medium" id="hero-video-video">
                     <div className="vidcover"></div> 
@@ -104,13 +106,11 @@ class Main extends Component {
             </div>
         </div>
         
-        <div className="clearfix">
-            <h3>Collection list</h3>
+        <div className="container-fluid">
+            <InfoBox />
         </div>
-        
-        <InfoBox />
-                
-        <div id="shopify-section-16118342097bc43a8a" className="shopify-section">
+
+        <div className="container-fluid">
             <div className="home-cta-bg mt-30   mb30 section-16118342097bc43a8a" data-section-id="16118342097bc43a8a" data-section-type="text-section">
                 <div className="cta-overlay">
                     <div className="container">

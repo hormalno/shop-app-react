@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card'
 import Carousel from 'react-bootstrap/Carousel'
 import image from './infobox.jpg'
 
+
 class InfoBox extends Component {
 
     constructor(props) {
@@ -37,8 +38,7 @@ class InfoBox extends Component {
 
     renderCard(item,index) {
         return (
-            <div className="col-md-3" style={{float:'left'}}>
-            <Card style={{width: '16rem'}} key={index}>
+            <Card style={{width: '16rem'}} key={1}>
                 <Card.Img variant="top" src={image} />
                 <Card.ImgOverlay><a href='/' className='btn btn-primary'>Quick view</a></Card.ImgOverlay>
                 <Card.Body>
@@ -51,7 +51,6 @@ class InfoBox extends Component {
                     </Card.Text>
                 </Card.Body>
             </Card>
-            </div>
         )
     }
 
@@ -76,20 +75,34 @@ class InfoBox extends Component {
 
     render() {
         return (
-            <Container className="text-center my-3">
-                <h2 className="font-weight-light">Bootstrap 4 - Multi Item Carousel</h2>
-                <Carousel id="multi-item" className="carousel slide carousel-multi-item" data-ride="carousel">
-                    <div className="controls-top">
-                        <a className="btn-floating" href="#multi-item" data-slide="prev"><i className="fas fa-chevron-left"></i>Prev</a>
-                        <a className="btn-floating" href="#multi-item" data-slide="next">Next<i className="fas fa-chevron-right"></i></a>
-                    </div>
-                    <ol className="carousel-indicators">
-                        <li data-target="#multi-item" data-slide-to="0" className="active"></li>
-                        <li data-target="#multi-item" data-slide-to="1"></li>
-                    </ol>
-                    {this.renderCards()}
-                </Carousel>
-            </Container>
+            // <Container className="text-center my-3">
+            //     <h2 className="font-weight-light">Bootstrap 4 - Multi Item Carousel</h2>
+            //     <Carousel id="multi-item" className="carousel slide carousel-multi-item" data-ride="carousel">
+            //         <div className="controls-top">
+            //             <a className="btn-floating" href="#multi-item" data-slide="prev"><i className="fas fa-chevron-left"></i>Prev</a>
+            //             <a className="btn-floating" href="#multi-item" data-slide="next">Next<i className="fas fa-chevron-right"></i></a>
+            //         </div>
+            //         <ol className="carousel-indicators">
+            //             <li data-target="#multi-item" data-slide-to="0" className="active"></li>
+            //             <li data-target="#multi-item" data-slide-to="1"></li>
+            //         </ol>
+            //         {this.renderCards()}
+            //     </Carousel>
+            // </Container>
+            <Card style={{width: '16rem'}} key={1}>
+                <Card.Img variant="top" src={image} />
+                <Card.ImgOverlay><a href='/' className='btn btn-primary'>Quick view</a></Card.ImgOverlay>
+                <Card.Body>
+                    <Card.Title>Card 1</Card.Title>
+                    <Card.Text>
+                        Living room group
+                    </Card.Text>
+                    <Card.Text>
+                        <small className="text-muted">5000 EUR</small>
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+
         );
     }
 }
