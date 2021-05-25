@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 // import styled from 'styled-components';
-import InfoBox from './InfoBox.js';
-import InfoBox2 from './InfoBox2.js';
-// import LazyLoadedCarousel from "./LazyLoadedCarousel.js";
-import Carousel2 from "./Carousel2.js";
+import CardCarousel from './CardCarousel.js';
+import Carousel from "./Carousel.js";
 import './Main.css';
+import image01 from './../../../src/Assets/image001.jpg'
+import image02 from './../../../src/Assets/image002.jpg'
+import image03 from './../../../src/Assets/image003.jpg'
 
 // const imageCarousel = {
 //      images: [        
@@ -22,6 +23,39 @@ import './Main.css';
 //         }
 //     ]
 // };
+
+const cards = [
+    {title: 'Card a', imgSrc: 'http://placehold.it/380?text=1'},
+    {title: 'Card b', imgSrc: 'http://placehold.it/380?text=2'},
+    {title: 'Card c', imgSrc: 'http://placehold.it/380?text=3'},
+    {title: 'Card d', imgSrc: 'http://placehold.it/380?text=4'},
+    {title: 'Card e', imgSrc: 'http://placehold.it/380?text=5'},
+    {title: 'Card f', imgSrc: 'http://placehold.it/380?text=6'},
+    {title: 'Card g', imgSrc: 'http://placehold.it/380?text=7'},
+    {title: 'Card h', imgSrc: 'http://placehold.it/380?text=8'}
+]
+
+const carousel = [
+    {
+        imageSource: image01,
+        imageAlt: 'first slide',
+        imageHeader: 'First Slide',
+        imageText: 'asd'
+    },
+    {
+        imageSource: image02,
+        imageAlt: 'second slide',
+        imageHeader: 'Second Slide',
+        imageText: 'zxc'
+    },
+    {
+        imageSource: image03,
+        imageAlt: 'third slide',
+        imageHeader: 'Third Slide',
+        imageText: 'zxc'
+    }
+]
+
 
 class Main extends Component {
     // style="padding-top: 30px;"
@@ -43,9 +77,9 @@ class Main extends Component {
 
        return (
     <div>
-        <Carousel2 />
+        <Carousel carousel={carousel} />
 
-        <InfoBox2 />
+        <CardCarousel cards={cards} />
         
         <div id="" className="container-fluid">
             <div data-section-id="video" data-section-type="video-section" className="mb30  video-section-video" data-videotype="youtube" data-videodisplay="autoplay_banner">
@@ -60,7 +94,7 @@ class Main extends Component {
         </div>
         
         <div className="container-fluid">
-            <InfoBox />
+            {/* <InfoBox /> */}
         </div>
 
         <div className="container-fluid">
